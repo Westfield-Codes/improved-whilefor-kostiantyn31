@@ -3,6 +3,7 @@
  * is being asked, and counting the number of equations with at least one error.
  * FLOWCHART: https://lucid.app/lucidchart/5a3164fd-459f-494d-9cae-b4a6be593b13/view
  */
+main();
 
 /* Setup */
 // Define a function called main and then call it up top.
@@ -10,7 +11,7 @@
 // Define a function called askQuestion and call it from inside askFive() as askQuestion(1);
 
 /* STAGE 1:ASK A QUESTION */
-function askQuestion(question) {
+function askQuestion(questions) {
 // Create a variable named a, and set to a random integer between 3 and 9.
 let a = Math.floor(Math.random()*7)+3;
 // Create a variable named b, and set to a random integer between 3 and 9.
@@ -20,7 +21,7 @@ let product = a*b;
 // Create a variable called equation, set as the complex string a * b = ?.
 let equation = "a * b = ?";
 // Create a variable called answer, ask user for it by prompting with equation.
-let answer = prompt(a + " + " + b + " = ???");
+let answer = prompt("Questions " + questions + ". " + a + " * " + b + " = ???");
 // Display "Correct!" and return 0 if the answer and product match.
 if (product == answer)  {
     alert("Correct");
@@ -31,6 +32,7 @@ else  {
     alert("Incorrect");
     return 1;
 }
+
 }
 /* askQuestion asks a multiplication question, returns 1 if incorrect
  * @param: question (integer 1-5)
