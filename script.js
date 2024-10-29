@@ -7,9 +7,13 @@ main();
 
 /* Setup */
 // Define a function called main and then call it up top.
+
 // Define a function called askFive and call it from inside main().
 // Define a function called askQuestion and call it from inside askFive() as askQuestion(1);
-
+function main() {
+    score = askFive;
+    
+}
 /* STAGE 1:ASK A QUESTION */
 function askQuestion(questions) {
 // Create a variable named a, and set to a random integer between 3 and 9.
@@ -19,32 +23,27 @@ let b = Math.floor(Math.random()*7)+3;
 // Create a variable called product, set as a * b.
 let product = a*b;
 // Create a variable called equation, set as the complex string a * b = ?.
-let equation = "a * b = ?";
+let equation = a + " * " + b + " = ???";
 // Create a variable called answer, ask user for it by prompting with equation.
-let answer = prompt("Questions " + questions + ". " + a + " * " + b + " = ???");
+let answer = product(equation);
 // Display "Correct!" and return 0 if the answer and product match.
-if (product == answer)  {
+else if (product == answer)  {
     alert("Correct");
     return 0;
 }
 // Otherwise, display "Incorrect!" and return 1.
-else  {
+else (product != answer) {
     alert("Incorrect");
     return 1;
 }
+
 
 }
 /* askQuestion asks a multiplication question, returns 1 if incorrect
  * @param: question (integer 1-5)
  * @return: integer (0 or 1)
  */
-// Create a variable named a, and set to a random integer between 3 and 9.
-// Create a variable named b, and set to a random integer between 3 and 9.
-// Create a variable called product, set as a * b.
-// Create a variable called equation, set as the complex string a * b = ?.
-// Create a variable called answer, ask user for it by prompting with equation.
-// Display "Correct!" and return 0 if the answer and product match.
-// Otherwise, display "Incorrect!" and return 1.
+
 
 /* TEST BEFORE CONTINUING TO STAGE TWO! */
 
@@ -54,12 +53,19 @@ else  {
  * @param: none
  * @return: score (0-5)
  */
+function askFive() {
 // Create a variable score, set to 0
+let score = 0;
 // Write a for loop with question as the index, values 1 to 5
+for  (let question = 0; question <= 5; question++) {
 // Call askQuestion in the loop, with question as argument
+    score += askQuestion(question);
+   } 
+   return score;
 // Add the returned value of askQuestion to score each time you call it (same line)
 // return score after loop finishes
 
+}
 /* TEST BEFORE CONTINUING TO STAGE THREE! */
 
 /* STAGE 3: MULTIPLE TRIES (CHALLENGE!) */
