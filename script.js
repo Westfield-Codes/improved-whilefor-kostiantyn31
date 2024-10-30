@@ -11,11 +11,12 @@ main();
 // Define a function called askFive and call it from inside main().
 // Define a function called askQuestion and call it from inside askFive() as askQuestion(1);
 function main() {
-    score = askFive;
-    
-}
+    let score = askFive();
+    alert("Your score: " + score + " out of 5");
+} 
+
 /* STAGE 1:ASK A QUESTION */
-function askQuestion(questions) {
+function askQuestion(question) {
 // Create a variable named a, and set to a random integer between 3 and 9.
 let a = Math.floor(Math.random()*7)+3;
 // Create a variable named b, and set to a random integer between 3 and 9.
@@ -25,19 +26,17 @@ let product = a*b;
 // Create a variable called equation, set as the complex string a * b = ?.
 let equation = a + " * " + b + " = ???";
 // Create a variable called answer, ask user for it by prompting with equation.
-let answer = product(equation);
+let answer = prompt(equation);
 // Display "Correct!" and return 0 if the answer and product match.
-else if (product == answer)  {
+if (product == answer)  {
     alert("Correct");
     return 0;
 }
 // Otherwise, display "Incorrect!" and return 1.
-else (product != answer) {
+else if (product != answer) {
     alert("Incorrect");
     return 1;
 }
-
-
 }
 /* askQuestion asks a multiplication question, returns 1 if incorrect
  * @param: question (integer 1-5)
@@ -62,10 +61,11 @@ for  (let question = 0; question <= 5; question++) {
     score += askQuestion(question);
    } 
    return score;
+}   
 // Add the returned value of askQuestion to score each time you call it (same line)
 // return score after loop finishes
 
-}
+
 /* TEST BEFORE CONTINUING TO STAGE THREE! */
 
 /* STAGE 3: MULTIPLE TRIES (CHALLENGE!) */
