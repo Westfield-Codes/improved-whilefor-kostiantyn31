@@ -28,14 +28,17 @@ let equation = a + " * " + b + " = ???";
 // Create a variable called answer, ask user for it by prompting with equation.
 let answer = prompt(equation);
 // Display "Correct!" and return 0 if the answer and product match.
-if (product == answer)  {
-    alert("Correct");
-    return 0;
+if (answer == "q"){
+    alert("Quitter!");
+    return 2;
 }
-// Otherwise, display "Incorrect!" and return 1.
-else if (product != answer) {
-    alert("Incorrect");
-    return 1;
+else if (answer == product){
+   alert("Correct!");
+   return 0;
+} 
+else {
+    alert("incorrect");
+    return 1;   
 }
 }
 /* askQuestion asks a multiplication question, returns 1 if incorrect
