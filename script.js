@@ -5,15 +5,12 @@
  * FLOWCHART: https://lucid.app/lucidchart/5a3164fd-459f-494d-9cae-b4a6be593b13/view
  */
 main()
+
 function main() {
     let score = askFive();
     if (score == 0) alert("Perfect!");
     else alert("You had "+score+" errors");
 }
-/* Setup */
-// Define a function called main and then call it up top.
-// Define a function called askFive and call it from inside main().
-// Define a function called askQuestion and call it from inside askFive() as askQuestion(1);
 
 /* STAGE 1:ASK A QUESTION */
 
@@ -21,6 +18,7 @@ function main() {
  * @param: question (integer 1-5)
  * @return: integer (0 or 1)
  */
+
 function askQuestion(question){
     let a = Math.floor(Math.random()*7)+3;
     let b = Math.floor(Math.random()*7)+3;
