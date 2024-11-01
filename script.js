@@ -8,7 +8,7 @@ main()
 function main() {
     let score = askFive();
     if (score == 0) alert("Perfect!");
-    else alert("You had "+score+" errors");
+    else alert("You had " + score + " errors");
 }
 /* Setup */
 // Define a function called main and then call it up top.
